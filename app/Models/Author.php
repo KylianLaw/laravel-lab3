@@ -2,10 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Builder;
-
+use Illuminate\Database\Eloquent\Model;
 
 class Author extends Model
 {
@@ -13,11 +11,6 @@ class Author extends Model
 
     public function posts()
     {
-        return $this-> hasMany(Post::class);
-    }
-
-    public function scopeName(Builder $query, string $name): Builder
-    {
-        return $query->where('name', 'LIKE', '%' . $name . '%');
+        return $this->hasMany(Post::class);
     }
 }
